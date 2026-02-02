@@ -1,5 +1,17 @@
-Tasks To Be Performed:
-1. Create 2 Ansible roles
-2. Install Apache2 on slave1 using one role and NGINX on slave2 using the
-other role
-3. Above should be implemented using different Ansible roles
+# Tasks To Be Performed:
+# 1. Create 2 Ansible roles
+# 2. Install Apache2 on slave1 using one role and NGINX on slave2 using the
+# other role
+# 3. Above should be implemented using different Ansible roles
+
+- name: install apache using roles 
+  hosts: slave1 
+  become: yes 
+  roles: 
+    - apache
+
+- name: install nginx using roles 
+  hosts: slave2 
+  become: yes 
+  roles: 
+    - nginx 
