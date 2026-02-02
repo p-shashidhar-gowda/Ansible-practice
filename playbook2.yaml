@@ -1,0 +1,5 @@
+# Tasks To Be Performed:
+# 1. Create a script which can add text “This text has been added by custom
+# script” to /tmp.1.txt
+# 2. Run this script using Ansible on all the hosts
+

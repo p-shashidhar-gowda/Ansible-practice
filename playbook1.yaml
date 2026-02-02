@@ -1,0 +1,31 @@
+# Tasks To Be Performed:
+# 1. Setup Ansible cluster with 3 nodes
+# 2. On slave 1 install Java
+# 3. On slave 2 install MySQL server
+# Do the above tasks using Ansible Playbooks
+
+
+- name: installing java on slave1 
+  hosts: slave1
+  become: yes 
+  tasks:
+    - name: installing java 
+      apt:
+        name: openjdk-11-jdk
+        state: present
+        update_cache: yes 
+
+- name: installing sql on slave2 
+  hosts: slave2 
+  become: yes 
+  tasks:
+    - name: installing sql  
+      apt:
+        name: mysql-server
+        state: present 
+        update_cache: yes 
+    - name: enabling sql 
+      service:
+        name: mysql 
+        state: started 
+        enabled: yes
