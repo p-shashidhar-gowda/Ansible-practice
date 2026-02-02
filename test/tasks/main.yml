@@ -1,0 +1,9 @@
+---
+# tasks file for test
+
+
+- name: install java 
+  apt:
+    name: openjdk-11-jdk
+    state: present
+    update_cache: yes 

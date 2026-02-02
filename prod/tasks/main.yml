@@ -1,0 +1,13 @@
+---
+# tasks file for prod
+
+- name: installing mysql server 
+  apt: 
+    name: mysql-server 
+    state: present 
+    update_cache: yes 
+- name: enabling sql service 
+  service: 
+    name: mysql 
+    state: started 
+    enabled: yes 
