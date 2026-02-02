@@ -3,3 +3,14 @@
 # script” to /tmp.1.txt
 # 2. Run this script using Ansible on all the hosts
 
+- name: addtext using ansible 
+  hosts: all 
+  become: true 
+  tasks:
+    - name: copy .sh file 
+      copy:
+        src: addtext.sh
+        dest: /tmp/addtext.sh  
+        mode: '777'
+    - name: run copied .sh file 
+      shell: /tmp/addtext.sh
