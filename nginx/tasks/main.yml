@@ -7,6 +7,10 @@
     name: nginx 
     state: present 
     update_cache: yes 
+- name: copying custom index.html 
+  copy:
+    src: index.html
+    dest: /var/www/html/index.html
 - name: enable nginx 
   service: 
     name: nginx 

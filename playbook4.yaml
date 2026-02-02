@@ -1,0 +1,12 @@
+# Tasks To Be Performed:
+# 1. Use the previous deployment of Ansible cluster
+# 2. Configure the files folder in the role with index.html which should be
+# replaced with the original index.html
+# All of the above should only happen on the slave which has NGINX installed
+# using the role
+
+- name: configuring custom index.html 
+  hosts: slave2 
+  become: yes 
+  roles:
+    - nginx
